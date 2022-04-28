@@ -1,7 +1,7 @@
 locals {
   tags = {
-    Owner = var.owner
+    Owner      = var.owner
     enviroment = var.enviroment
-    project = var.project
+    project    = var.project
   }
 }

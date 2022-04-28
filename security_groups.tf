@@ -1,5 +1,7 @@
 
 resource "aws_security_group" "web" {
+  count = length(var.public_subnets)
+
   name        = "web-server-${var.enviroment}"
   description = "Allow SSH and HTTP to web hosts"
   vpc_id      = module.vpc.vpc_id
@@ -27,7 +29,7 @@ resource "aws_security_group" "web" {
 
   tags = merge(local.tags,
     {
-      Name = "web_sg-${var.project}-${var.enviroment}"
+      Name = format("${var.owner}-${var.enviroment}-web-%02s-sg", count.index + 1)
     }
   )
 }

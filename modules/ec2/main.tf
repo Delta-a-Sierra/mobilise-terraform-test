@@ -8,13 +8,13 @@ resource "aws_instance" "ec2" {
 
   tags = merge(local.tags,
     {
-      Name = "instance${var.instance_number}-${var.name}-${var.project}-${var.enviroment}"
+      Name = format("${var.owner}-${var.enviroment}-${var.name}-%02s-ec2", var.instance_number + 1)
     }
   )
 
   volume_tags = merge(local.tags,
     {
-      Name = "instance${var.instance_number}-${var.name}-${var.project}-${var.enviroment}"
+      Name = format("${var.owner}-${var.enviroment}-${var.name}-%02s-ec2", var.instance_number + 1)
     }
   )
 } 

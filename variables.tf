@@ -26,36 +26,36 @@ variable "cidr_block" {
 }
 
 variable "public_subnets" {
-  type = list(string)
+  type        = list(string)
   description = "list of public subnet address spaces"
-  default = []
+  default     = []
 }
 
 ####################        EC2 VARS       ###############################
 
 variable "webinstance_name" {
-  type = string
+  type        = string
   description = "name to identify instance"
 }
 
 variable "web_ami" {
-  type = string
+  type        = string
   description = "image to be used when creating the instance"
 }
 
 variable "instance_type" {
-  type = string
+  type        = string
   description = "size of the instance"
-  default = "t2.micro"
+  default     = "t2.micro"
 }
 
 variable "web_key" {
-  type = string
+  type        = string
   description = "name of the ssh key to be used to connect to the instance"
 }
 
 variable "ssh_key_path" {
-  type = string
+  type        = string
   description = "path to the public ssh key"
-  default = "~/.ssh/id_rsa.pub"
+  default     = "~/.ssh/id_rsa.pub"
 }

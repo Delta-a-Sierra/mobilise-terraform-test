@@ -45,9 +45,9 @@ variable "enviroment" {
 }
 
 variable "instance_number" {
-  type = string
+  type = number
   description = "used to name instance with a number when count is used"
-  default = ""
+  default = 0
 }
 
 variable "public_ip_enabled" {
