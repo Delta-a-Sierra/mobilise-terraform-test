@@ -2,7 +2,7 @@
 resource "aws_security_group" "web" {
   count = length(var.public_subnets)
 
-  name        = "web-server-${var.enviroment}"
+  name        = format("${var.owner}-${var.enviroment}-web-%02s-sg", count.index + 1)
   description = "Allow SSH and HTTP to web hosts"
   vpc_id      = module.vpc.vpc_id
 
