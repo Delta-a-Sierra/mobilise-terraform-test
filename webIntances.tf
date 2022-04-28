@@ -1,5 +1,5 @@
 resource "aws_key_pair" "web" {
-  key_name   = "webtier-key"
+  key_name   = var.web_key
   public_key = file("${var.ssh_key_path}")
   
 }
