@@ -1,8 +1,9 @@
-module "vpc" {
-  source         = "./modules/vpc"
-  cidr_block     = var.cidr_block
-  owner          = var.owner
-  project        = var.project
-  enviroment     = var.enviroment
-  public_subnets = var.public_subnets
+resource "aws_vpc" "vpc" {
+  cidr_block = var.cidr_block
+
+  tags = merge(local.tags,
+    {
+      Name = "${var.owner}-${var.enviroment}-vpc"
+    }
+  )
 }

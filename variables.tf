@@ -1,20 +1,22 @@
+
+
 variable "region" {
   type        = string
   description = "region in which resources are to be created"
 }
 
 variable "owner" {
-  type        = string
+  type = string
   description = "owner of the resources being created"
 }
 
 variable "project" {
-  type        = string
+  type = string
   description = "the name of the project"
 }
 
 variable "enviroment" {
-  type        = string
+  type = string
   description = "the enviroment resources are being used for eg dev/prod"
 }
 
@@ -38,7 +40,7 @@ variable "webinstance_name" {
   description = "name to identify instance"
 }
 
-variable "web_ami" {
+variable "ami" {
   type        = string
   description = "image to be used when creating the instance"
 }
@@ -49,7 +51,7 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "web_key" {
+variable "key_name" {
   type        = string
   description = "name of the ssh key to be used to connect to the instance"
 }
@@ -59,3 +61,4 @@ variable "ssh_key_path" {
   description = "path to the public ssh key"
   default     = "~/.ssh/id_rsa.pub"
 }
+

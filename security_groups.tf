@@ -4,7 +4,7 @@ resource "aws_security_group" "web" {
 
   name        = format("${var.owner}-${var.enviroment}-web-%02s-sg", count.index + 1)
   description = "Allow SSH and HTTP to web hosts"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = aws_vpc.vpc.id
 
   ingress {
     from_port   = 22
