@@ -12,8 +12,3 @@ resource "aws_lb_target_group" "web" {
     unhealthy_threshold = 3
   }
 }
-
-# resource "aws_lb_target_group_attachment" "web" {
-#   target_group_arn = aws_lb_target_group.web.arn
-#   target_id        = aws_lb.web.id
-# }
